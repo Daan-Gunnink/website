@@ -1,10 +1,10 @@
 ---
 import "@fontsource-variable/inter";
 import "@fontsource/anton";
-import '@fontsource-variable/fira-code';
+import "@fontsource-variable/fira-code";
+import Globe from "../assets/globe.svg";
 ---
 
-<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -14,6 +14,9 @@ import '@fontsource-variable/fira-code';
     <title>Daan Gunnink | Team Lead and Software Engineer</title>
   </head>
   <body>
+    <div class="absolute w-full h-full overflow-y-clip pt-48">
+      <Globe class="absolute" opacity={0.4} />
+    </div>
     <slot />
   </body>
 </html>
@@ -28,13 +31,7 @@ import '@fontsource-variable/fira-code';
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
     font-family: "Fira Code Variable", monospace;
-    background-image: radial-gradient(
-        circle at 79% 8%,
-        rgba(218, 218, 218, 0.04) 0%,
-        rgba(218, 218, 218, 0.04) 50%,
-        rgba(129, 129, 129, 0.04) 50%,
-        rgba(129, 129, 129, 0.04) 100%
-      ),
+    background-image: 
       radial-gradient(
         circle at 0% 68%,
         rgba(47, 47, 47, 0.04) 0%,
