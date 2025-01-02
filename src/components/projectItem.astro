@@ -1,0 +1,25 @@
+---
+import Technology from "./technology.astro";
+
+interface Props {
+  title: string;
+  subtitle: string;
+  description: string;
+  technologies: string[];
+}
+
+const { title, subtitle, description, technologies } = Astro.props;
+---
+
+<div class="grid grid-cols-1 md:grid-cols-8 gap-x-16">
+  <span class="col-span-2 text-xl font-bold">{title}</span>
+  <div class="col-span-6">
+    <span class="text-lg">{subtitle}</span>
+    <p class="mt-2 text-sm">
+      {description}
+    </p>
+    <div class="flex flex-row gap-x-2 mt-2">
+      {technologies?.map((technology) => <Technology>{technology}</Technology>)}
+    </div>
+  </div>
+</div>

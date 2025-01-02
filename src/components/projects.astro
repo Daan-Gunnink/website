@@ -1,9 +1,13 @@
 ---
-import ExperienceItem from "./experienceItem.astro";
+import ProjectItem from "./projectItem.astro";
+import { getCollection } from 'astro:content';
+
+const projects = await getCollection('projects');
+console.log(projects);
 ---
 
-<div class="mt-14 self-end text-[#F5F3F4]/70">
-  <ExperienceItem />
-  <ExperienceItem />
-  <ExperienceItem />
+<div class="self-end text-[#F5F3F4]/70 flex flex-col gap-y-8 mt-4">
+  {projects.map((project) => (
+    <ProjectItem {...project.data} />
+  ))}
 </div>

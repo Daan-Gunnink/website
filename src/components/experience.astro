@@ -2,8 +2,79 @@
 import ExperienceItem from "./experienceItem.astro";
 ---
 
-<div class="mt-14 self-end text-[#F5F3F4]/70 pb-16">
-    <ExperienceItem />
-    <ExperienceItem />
-  </div>
+<div class="self-end text-[#F5F3F4]/70 pb-16 flex flex-col gap-y-8">
+  <ExperienceItem
+    employer="Infowijs"
+    tenure="2023-Present"
+    roles={[
+      {
+        title: "Team Lead",
+        tenure: "2024-Present",
+      },
+      {
+        title: "Software Engineer",
+        tenure: "2023-Present",
+      },
+    ]}
+    products={[
+      {
+        title: "Hoy",
+        description:
+          "Hoy is a communication tool for high schools in The Netherlands. I am doing full stack development on the platform, but mostly enjoy frontend development.",
+        technologies: [
+          "React",
+          "React Native",
+          "Typescript",
+          "PHP",
+          "PostgreSQL",
+          "MongoDB",
+        ],
+      },
+      {
+        title: "Brugger",
+        description:
+          "Brugger is Infowijs' newest product that digitalizes the application procedure for children applying for a highschool.",
+        technologies: ["React", "Postgresql", "Node.js"],
+      },
+    ]}
+    description=""
+  />
+  <ExperienceItem
+    employer="Mediaan Conclusion (Mediaan)"
+    tenure="2019-2023"
+    roles={[
+      {
+        title: "Team Lead",
+        tenure: "2022-2023",
+      },
+      {
+        title: "Internship Supervisor",
+        tenure: "2021-2023",
+      },
+      {
+        title: "Software Engineer",
+        tenure: "2019-2023",
+      },
+    ]}
+    products={[
+      {
+        title: "Deutsche Telekom",
+        description:
+          "For nearly two and a half years I worked on the development of an Android and Android TV application for Deutsche Telekom.",
+        technologies: [
+          "Kotlin",
+          "KMM",
+          "Android",
+          "Android TV",
+        ],
+      },
+      {
+        title: "Scala",
+        description:
+          "Migrating wordpress websites to Vue.JS using contentful. The system distributed content between 18 websites with more than half a million page views per month combined.",
+        technologies: ["Vue.JS", "CMS", "Contentful", "Wordpress"],
+      },
+    ]}
+    description=""
+  />
 </div>

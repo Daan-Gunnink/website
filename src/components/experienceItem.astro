@@ -1,18 +1,63 @@
+---
+import Technology from "./technology.astro";
+
+export interface product {
+  title: string;
+  description: string;
+  technologies: string[];
+}
+
+export interface role {
+  title: string;
+  tenure: string;
+}
+
+export interface experienceItemProps {
+  employer: string;
+  tenure: string;
+  roles: role[];
+  products: product[];
+  description: string;
+}
+
+interface Props extends experienceItemProps {}
+
+const { employer, tenure, roles, products, description } = Astro.props;
+---
+
 <div>
-  <div class="flex flex-row gap-x-8">
-    <span>2023-Present</span>
-    <div>
-      <span>Software Engineer</span> - <span>Infowijs</span>
+  <div class="grid grid-cols-8 gap-x-16">
+    <span class="font-bold text-lg col-span-2">{employer}</span>
+    <div class="col-span-6">
+      <span class="font-bold text-sm">{tenure}</span>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+        {description}
       </p>
-      <div class="flex flex-row gap-x-2">
-        <span>TypeScript</span>
-        <span>React</span>
-        <span>React Native</span>
-        <span>Kotlin</span>
-        <span>Vert.x</span>
-      </div>
+      <ul class="flex flex-col gap-x-2 ml-2">
+        {
+          roles?.map((role) => (
+            <li>
+              <span class="text-xs">{role.tenure}</span>
+              <span class="font-bold text-xs">{role.title}</span>
+            </li>
+          ))
+        }
+      </ul>
+      <ul class="flex flex-col gap-x-2 gap-y-4 mt-6">
+        {
+          products?.map((product) => (
+            <li class="flex flex-col gap-y-1">
+              <span class="font-bold">{product.title}</span>
+              <span class="text-sm">{product.description}</span>
+              <div class="flex flex-wrap gap-x-2 gap-y-2 mt-2">
+                {product.technologies?.map((technology) => (
+                  <Technology>{technology}</Technology>
+                ))}
+              </div>
+            </li>
+          ))
+        }
+      </ul>
     </div>
   </div>
 </div>
