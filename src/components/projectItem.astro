@@ -11,7 +11,7 @@ interface Props {
 const { title, subtitle, description, technologies } = Astro.props;
 ---
 
-<div class="grid grid-cols-1 md:grid-cols-8 gap-x-16">
+<div class="flex flex-col md:grid grid-cols-1 md:grid-cols-8 gap-x-16">
   <span class="col-span-2 text-xl font-bold">{title}</span>
   <div class="col-span-6">
     <span class="text-lg">{subtitle}</span>
