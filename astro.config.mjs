@@ -6,8 +6,7 @@ import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://daan-gunnink.github.io',
-  base: 'website',
+  site: 'https://daan.sh',
   integrations: [tailwind(), mdx()],
   experimental: {
     svg: true,
