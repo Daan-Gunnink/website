@@ -1,14 +1,19 @@
 ---
 import Technology from "./technology.astro";
+import Github from "../assets/github-mark-white.svg";
+import Website from "../assets/website.svg";
 
 interface Props {
   title: string;
   subtitle: string;
   description: string;
   technologies: string[];
+  githubUrl?: string;
+  websiteUrl?: string;
 }
 
-const { title, subtitle, description, technologies } = Astro.props;
+const { title, subtitle, description, technologies, githubUrl, websiteUrl } =
+  Astro.props;
 ---
 
 <div class="flex flex-col md:grid grid-cols-1 md:grid-cols-8 gap-x-16">
@@ -20,6 +25,22 @@ const { title, subtitle, description, technologies } = Astro.props;
     </p>
     <div class="flex flex-row gap-x-2 mt-2">
       {technologies?.map((technology) => <Technology>{technology}</Technology>)}
+    </div>
+    <div class="flex flex-row gap-x-2 mt-2">
+      {
+        githubUrl && (
+          <a href={githubUrl} target="_blank" rel="noopener noreferrer">
+            <Github class="w-4 h-4 fill-white opacity-40 hover:opacity-100"/>
+          </a>
+        )
+      }
+      {
+        websiteUrl && (
+          <a href={websiteUrl} target="_blank" rel="noopener noreferrer">
+            <Website class="w-4 h-4 fill-white opacity-40 hover:opacity-100"/>
+          </a>
+        )
+      }
     </div>
   </div>
 </div>

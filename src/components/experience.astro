@@ -2,10 +2,11 @@
 import ExperienceItem from "./experienceItem.astro";
 ---
 
-<div class="self-end text-[#F5F3F4]/70 pb-16 flex flex-col gap-y-8 mt-2">
+<div class="self-end text-[#F5F3F4]/70 pb-16 flex flex-col gap-y-8 md:gap-y-12 mt-2">
   <ExperienceItem
     employer="Infowijs"
     tenure="2023-Present"
+    description="Working on developing and maintaining the Hoy/Infowijs platform. Here I am working as a full stack developer, but have a focus on frontend development for our web clients and mobile apps. The platform has more than 250k users and is still growing fast. We're in the middle of a migration from PHP to Vert.X. As a team lead I'm also responsible to help our engineering team grow and maintain a healthy work culture."
     roles={[
       {
         title: "Team Lead",
@@ -37,11 +38,11 @@ import ExperienceItem from "./experienceItem.astro";
         technologies: ["React", "Postgresql", "Node.js"],
       },
     ]}
-    description=""
   />
   <ExperienceItem
     employer="Mediaan Conclusion (Mediaan)"
-    tenure="2019-2023"
+    tenure="2018-2023"
+    description="At Mediaan I started working as an intern on an application for the Microsoft HoloLens. After graduating I started working as a software engineer working on various projects for differnt clients. Eventually I became a team lead where I was responsible for the growth of five other developers, as well as their end-of-year reviews."
     roles={[
       {
         title: "Team Lead",
@@ -55,18 +56,17 @@ import ExperienceItem from "./experienceItem.astro";
         title: "Software Engineer",
         tenure: "2019-2023",
       },
+      {
+        title: "Intern",
+        tenure: "2018-2019",
+      },
     ]}
     products={[
       {
         title: "Deutsche Telekom",
         description:
-          "For nearly two and a half years I worked on the development of an Android and Android TV application for Deutsche Telekom.",
-        technologies: [
-          "Kotlin",
-          "KMM",
-          "Android",
-          "Android TV",
-        ],
+          "Worked on the development of an Android and Android TV video calling application for a bespoke hardware device for Deutsche Telekom. Also reponsible for a KMM library shared with the iOS development team.",
+        technologies: ["Kotlin", "KMM", "Android", "Android TV", "Frozen Mountain"],
       },
       {
         title: "Scala",
@@ -75,6 +75,5 @@ import ExperienceItem from "./experienceItem.astro";
         technologies: ["Vue.JS", "CMS", "Contentful", "Wordpress"],
       },
     ]}
-    description=""
   />
 </div>
