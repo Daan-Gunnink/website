@@ -20,3 +20,5 @@ Disallow: /
 
 User-agent: OpenAI
 Disallow: /
+
+Sitemap: https://daan.sh/sitemap-index.xml
