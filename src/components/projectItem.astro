@@ -30,14 +30,14 @@ const { title, subtitle, description, technologies, githubUrl, websiteUrl } =
       {
         githubUrl && (
           <a href={githubUrl} target="_blank" rel="noopener noreferrer">
-            <Github class="w-4 h-4 fill-white opacity-40 hover:opacity-100"/>
+            <Github aria-label="Github" class="w-4 h-4 fill-white opacity-40 hover:opacity-100"/>
           </a>
         )
       }
       {
         websiteUrl && (
           <a href={websiteUrl} target="_blank" rel="noopener noreferrer">
-            <Website class="w-4 h-4 fill-white opacity-40 hover:opacity-100"/>
+            <Website aria-label="Website" class="w-4 h-4 fill-white opacity-40 hover:opacity-100"/>
           </a>
         )
       }
