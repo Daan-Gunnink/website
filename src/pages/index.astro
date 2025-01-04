@@ -9,13 +9,13 @@ import LinkedIn from "../assets/linkedIn.svg";
 ---
 
 <script>
-  const gradient = document.querySelector("#emeraldGradient");
+  const gradient = document.querySelector("#globeGradient");
   if (gradient) {
     gradient.style.opacity = "0";
   }
 
   document.addEventListener("mousemove", (e) => {
-    const gradient = document.querySelector("#emeraldGradient");
+    const gradient = document.querySelector("#globeGradient");
     if (gradient) {
       const rect = gradient.closest("svg").getBoundingClientRect();
       const x = ((e.clientX - rect.left) / rect.width) * 100;
@@ -31,11 +31,14 @@ import LinkedIn from "../assets/linkedIn.svg";
     class="flex flex-col px-8 md:px-0 pb-16 md:flex-row md:w-2/3 w-full mx-auto justify-between relative"
   >
     <aside class="md:w-1/3">
-      <div class="flex flex-col mt-24 md:mt-36 gap-16 items-center sticky top-36">
+      <div
+        class="flex flex-col mt-24 md:mt-36 gap-16 items-center sticky top-36"
+      >
         <div>
           <div>
             <p class="ml-2 mt-2 text-md text-[#B1A7A6]">
-              "Creating software that puts people first and makes a positive difference in society."
+              "Creating software that puts people first and makes a positive
+              difference in society."
             </p>
             <h1 class="text-6xl mt-8 font-bold font-anton text-[#E5383B]">
               Daan Gunnink
@@ -46,11 +49,23 @@ import LinkedIn from "../assets/linkedIn.svg";
             </h2>
             <h2 class="text-lg text-[#B1A7A6]">at Infowijs</h2>
             <div class="flex flex-wrap gap-x-2 mt-4">
-              <a href="https://github.com/daan-gunnink" target="_blank" rel="noopener noreferrer">
-                <Github class="w-6 h-6 fill-white opacity-40 hover:opacity-100"/>
+              <a
+                href="https://github.com/daan-gunnink"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Github
+                  class="w-6 h-6 fill-white opacity-40 hover:opacity-100"
+                />
               </a>
-              <a href="https://www.linkedin.com/in/daan-gunnink/" target="_blank" rel="noopener noreferrer">
-                <LinkedIn class="w-6 h-6 fill-white opacity-40 hover:opacity-100"/>
+              <a
+                href="https://www.linkedin.com/in/daan-gunnink/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <LinkedIn
+                  class="w-6 h-6 fill-white opacity-40 hover:opacity-100"
+                />
               </a>
             </div>
           </div>
@@ -60,8 +75,10 @@ import LinkedIn from "../assets/linkedIn.svg";
 
     <main class="flex flex-col md:w-1/2 relative">
       <section class="snap-start pt-24" id="aboutme">
-        <a href="#aboutme" id="aboutme-a" class="text-2xl font-bold text-end text-[#F5F3F4]"
-          >About me</a
+        <a
+          href="#aboutme"
+          id="aboutme-a"
+          class="text-2xl font-bold text-end text-[#F5F3F4]">About me</a
         >
         <AboutMe />
       </section>
@@ -69,12 +86,14 @@ import LinkedIn from "../assets/linkedIn.svg";
         <a
           href="#experience"
           id="experience-a"
-          class="text-2xl font-bold text-end text-[#F5F3F4]"
-          >Experience</a
+          class="text-2xl font-bold text-end text-[#F5F3F4]">Experience</a
         >
         <Experience />
       </section>
-      <section class="snap-start min-h-[calc(100dvh-48px)] pt-20 pb-16" id="projects">
+      <section
+        class="snap-start min-h-[calc(100dvh-48px)] pt-20 pb-16"
+        id="projects"
+      >
         <a
           href="#projects"
           id="projects-a"
@@ -86,5 +105,4 @@ import LinkedIn from "../assets/linkedIn.svg";
   </div>
 </Layout>
 
-<script>
-</script>
+<script></script>
