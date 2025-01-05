@@ -9,20 +9,42 @@ import LinkedIn from "../assets/linkedIn.svg";
 
 <script>
   const gradient = document.querySelector("#globeGradient");
+  const body = document.querySelector("body");
+
+  const calculatePositionScroll = () => {
+    const gradient = document.querySelector("#globeGradient");
+    if (gradient && body) {
+      const scrollY = body.scrollHeight - body.scrollTop - body.clientHeight;
+      const scrollPercentage = 1 - scrollY / body.scrollHeight;
+      gradient.setAttribute("cx", `50%`);
+      gradient.setAttribute("cy", `${scrollPercentage * 100}%`);
+    }
+  };
+
   if (gradient) {
-    gradient.style.opacity = "0";
+    if (window.innerWidth < 768) {
+      const stops = gradient.querySelectorAll("stop");
+      stops[1].setAttribute("offset", "0.6");
+      calculatePositionScroll();
+    }
   }
 
-  document.addEventListener("mousemove", (e) => {
-    const gradient = document.querySelector("#globeGradient");
-    if (gradient) {
-      const rect = gradient.closest("svg").getBoundingClientRect();
-      const x = ((e.clientX - rect.left) / rect.width) * 100;
-      const y = ((e.clientY - rect.top) / rect.height) * 100;
-      gradient.setAttribute("cx", `${x}%`);
-      gradient.setAttribute("cy", `${y}%`);
-    }
-  });
+  if (window.innerWidth > 768) {
+    document.addEventListener("mousemove", (e) => {
+      const gradient = document.querySelector("#globeGradient");
+      if (gradient) {
+        const rect = gradient.closest("svg").getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        gradient.setAttribute("cx", `${x}%`);
+        gradient.setAttribute("cy", `${y}%`);
+      }
+    });
+  } else {
+    body?.addEventListener("scroll", (e) => {
+      calculatePositionScroll();
+    });
+  }
 </script>
 
 <Layout>
